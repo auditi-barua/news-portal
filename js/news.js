@@ -1,64 +1,28 @@
-const loadData = () => {
-    fetch(' https://openapi.programming-hero.com/api/news/category/01')
-    .then(res => res.json())
-    .then(data => displayDataDetails(data.data))
+const load_data = () => {
+    fetch('https://openapi.programming-hero.com/api/news/categories')
+    .then(response => response.json())
+    .then(data => display_category(data.data.news_category))
+    .catch(error => console.log(error));
 }
-const displayDataDetails = (data) => {
-    const newsContainer = document.getElementById('news-container')
-    data.forEach(news =>{
-        console.log(news);
-        const newsDiv = document.createElement('div')
-        newsDiv.classList.add('col')
-        newsDiv.innerHTML = `
-        <div class="card">
-        <img src="${data.image_url}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-        </div>
-      </div>
+load_data()
+
+const display_category = category_data =>{
+     console.log(category_data);
+    const show_category = document.getElementById('newscategory_item');
+    category_data.forEach(category =>{
+        console.log(category.category_name);
+        const li_show_category= document.createElement('li');
+        li_show_category.classList.add('çategory_item');
+        li_show_category.innerHTML = `
+        <a onclick="display_category(${category.category_id})">${category.category_name}</a>
         `;
-        newsContainer.appendChild(newsDiv);
-    })
+        show_category.appendChild(li_show_category);
+    });
+   // toggleSpinner(false);
 }
-document.getElementById('li-1').addEventListener('click',function(){
-  category()
-})
-const loadCategory = async id => {
-    const url = 'https://openapi.programming-hero.com/api/news/category/{category_id}'
-    const res = await fetch(url);
-    const data = await res.json();
-    displayCategory(data.data);
-}
-const displayCategory = category =>{
-    console.log(category);
-    const modalTitle = document.getElementById('categories-container');
-    modalTitle.innerText = phone.name;
-    const categoryDetails = document.getElementById('loading');
-    console.log(phone.mainFeatures.sensors[0]);
-    phoneDetails.innerHTML = `
-        <p>Release Date: ${phone.releaseDate ? phone.releaseDate : 'No Release Date Found'}</p>
-        <p>Storage: ${phone.mainFeatures ? phone.mainFeatures.storage : 'No Storage Information '}</p>
-        <p>Others: ${phone.others ? phone.others.Bluetooth : 'No Bluetooth Information'}</p>
-        <p>Sensor: ${phone.mainFeatures.sensors ? phone.mainFeatures.sensors[0] : 'no sensor'}</p>
-    `;
-}
+display_category();
 
-// handle search button click
-document.getElementById('loading').addEventListener('click', function(){
-    // start loader
-    
-})
-
-// search input field enter key handler
-//document.getElementById('search-field').addEventListener('keypress', function (e) {
-  //  if (e.key === 'Enter') {
-    //    processSearch(10);
-    //}
-//});
-
-
-
+ 
 const toggleSpinner = isLoading => {
     const loaderSection = document.getElementById('loader');
     if(isLoading){
@@ -69,6 +33,44 @@ const toggleSpinner = isLoading => {
     }
 }
 
-
-
+const loadData = () => {
+    fetch('https://openapi.programming-hero.com/api/news/category/01')
+    .then(res => res.json())
+    .then(data => displayDataDetails(data.data))
+}
 loadData();
+const displayDataDetails = data =>{
+    console.log(data);
+    const newsContainer = document.getElementById('news-container')
+    data.forEach(news => {
+       const newsDiv = document.createElement('card');
+       newsDiv.classList.add('row');
+        newsDiv.innerHTML = `
+        <div class="col-md-4 ">
+        <img src="${data.image_url}" class="img-fluid rounded-start g-4" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">${data.title}</h5>
+          <p class="card-text">${data.details}</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+     
+        `;
+        newsContainer.appendChild(newsDiv);
+    })
+
+}
+displayDataDetails();
+
+
+ 
+
+
+
+
+
+
+
+

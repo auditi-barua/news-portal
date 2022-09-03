@@ -20,51 +20,82 @@
                   <li class="nav-item ">
                     <a class="nav-link active fs-italic text-decoration-underline text-primary" aria-current="page" href="#">Home</a>
                   </li>
-                  <li class="nav-item ">
-                    <a class="nav-link active" aria-current="page" href="#">Blog</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+                 <li>
+                <!-- Button trigger modal -->
+   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Blog
+   </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h3>What is the difference of var,let and const? </h3>
+          <p>Variables declared with var and const are scoped to the immediate function body.Variables declared with the let keyword are block-scoped, which means the variables will have scope to the immediate enclosing block.
+            
+            let is the improved version of var. let eliminates all the issues of var that we have talked about in the previous section. let has a similar syntax to var but has a more strict scope.
+            const declares a variable with a constant value.
+            Use the const keyword if the variable that you are declaring should not be allowed to be reassigned in the future.
+        </p>
+        <h3>What is the difference of regular and arrow function?</h3>
+        <p>Regular functions created using function declarations or expressions are constructible and callable. Since regular functions are constructible, they can be called using the new keyword. However, the arrow functions are only callable and not constructible, i.e arrow functions can never be used as constructor functions.</p>
+        <h2>Why do we use template string in javascrip? </h2>
+        <p>Template strings are a powerful feature of modern JavaScript released in ES6. It lets us insert/interpolate variables and expressions into strings without needing to concatenate like in older versions of JavaScript. It allows us to create strings that are complex and contain dynamic elements</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    </li>
+  </ul>
+ </div>
+ </div>
+  </nav>
     </header>
+
+
+    <!--header part end-->
     <hr class="container mt-3">
+
+    <!--main part start-->
     <main class="bg-light ">
-        <section  id="categories-container" class="mt-5">
-            <ul class="list-group list-unstyled list-group-horizontal" id="loading">
-                <li class="list-item ms-5 text-secondary" id="li-1">Home</li>
-                <li class="list-item ms-5 text-secondary">Breaking News</li>
-                <li class="list-item ms-5 text-secondary">Regular News</li>
-                <li class="list-item ms-5 text-secondary">International News</li>
-                <li class="list-item ms-5 text-secondary">Sports</li>
-                <li class="list-item ms-5 text-secondary border border-2  border-primary text-primary ">Entertainment</li>
-                <li class="list-item ms-5 text-secondary">Culture</li>
-                <li class="list-item ms-5 text-secondary">Art</li>
-                <li class="list-item ms-5 text-secondary">News</li>
-              </ul>
-        </section>
-        <section>
-            <div id="loader">
-                
+        <!--category -->
+        <section  id="categories-container" class="mt-5 container">
+           <ul id="newscategory_item" class="list-unstyled li-sm li-lg d-flex gap-4 text-secondary ms-4 ">
+
+           </ul>
+           <!--spinning-->
+           <section id="loader" class="d-none">
+            <div style="height: 400px" class="d-flex justify-content-center align-items-center">
+                <div class="spinner-border text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
             </div>
+        </section>
         </section>
         <section class="container mt-5">
             <div class="mb-3">
                 
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="4 items found for category Entertainment">
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="8 items found for category Entertainment">
               </div>
         </section>
         <section class="container mt-5">
-            <div id="news-container" class="row row-cols-1 row-cols-md-1 g-4">
-          
-                
-               
+            <div id="news-container" class="card mb-3 gap-4" >
+              
               </div>
         </section>
 
     </main>
 
-    <footer>
+    <footer class="bg-light">
         <p class="mt-5 text-center">Copyright 2021 BBC NEWS</p>
     </footer>
    
