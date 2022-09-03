@@ -11,8 +11,7 @@
     <header class="container bg-light">
         <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">BBC NEWS</a>
-              <img src="img/logo.png" alt="">
+              <a class="navbar-brand text-primary" href="#">BBC <span class="bg-primary text-light">NEWS</span></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -30,15 +29,44 @@
           </nav>
     </header>
     <hr class="container mt-3">
-    <main class="bg-light">
+    <main class="bg-light ">
+        <section  id="categories-container" class="mt-5">
+            <ul class="list-group list-unstyled list-group-horizontal" id="loading">
+                <li class="list-item ms-5 text-secondary" id="li-1">Home</li>
+                <li class="list-item ms-5 text-secondary">Breaking News</li>
+                <li class="list-item ms-5 text-secondary">Regular News</li>
+                <li class="list-item ms-5 text-secondary">International News</li>
+                <li class="list-item ms-5 text-secondary">Sports</li>
+                <li class="list-item ms-5 text-secondary border border-2  border-primary text-primary ">Entertainment</li>
+                <li class="list-item ms-5 text-secondary">Culture</li>
+                <li class="list-item ms-5 text-secondary">Art</li>
+                <li class="list-item ms-5 text-secondary">News</li>
+              </ul>
+        </section>
         <section>
-            <div id="news-container" class="row row-cols-1 row-cols-md-2 g-4">
+            <div id="loader">
+                
+            </div>
+        </section>
+        <section class="container mt-5">
+            <div class="mb-3">
+                
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="4 items found for category Entertainment">
+              </div>
+        </section>
+        <section class="container mt-5">
+            <div id="news-container" class="row row-cols-1 row-cols-md-1 g-4">
+          
+                
                
-         
               </div>
         </section>
 
     </main>
+
+    <footer>
+        <p class="mt-5 text-center">Copyright 2021 BBC NEWS</p>
+    </footer>
    
     <script src="js/bootstrap.min.js"></script>
     <script src="js/news.js"></script>
