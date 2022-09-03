@@ -11,7 +11,7 @@
     <header class="container bg-light">
         <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex">
             <div class="container-fluid">
-              <a class="navbar-brand text-primary" href="#">BBC <span class="bg-primary text-light">NEWS</span></a>
+              <a class="navbar-brand text-primary fs-bold" href="#">BBC <span class="bg-primary text-light fs-bold">NEWS</span></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -55,6 +55,7 @@
     </div>
   </div>
     </li>
+    <img src="img/logo.png" class="rounded-circle ms-3" alt="">
   </ul>
  </div>
  </div>
@@ -84,7 +85,10 @@
         <section class="container mt-5">
             <div class="mb-3">
                 
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="8 items found for category Entertainment">
+                <input  type="email" class="form-control" id="search-field" id="exampleFormControlInput1" placeholder="search category">
+                <div id="no-found-message" class="mt-4 d-none">
+                    <h3 class="text-warning">No Phone Found.Please try a new search</h3>
+                  </div>
               </div>
         </section>
         <section class="container mt-5">
@@ -96,7 +100,7 @@
     </main>
 
     <footer class="bg-light">
-        <p class="mt-5 text-center">Copyright 2021 BBC NEWS</p>
+        <p class="mt-5 text-center text-secondary fs-bold">Copyright 2021 BBC NEWS</p>
     </footer>
    
     <script src="js/bootstrap.min.js"></script>
