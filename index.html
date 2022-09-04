@@ -10,10 +10,10 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 
-<body>
+<body class="bg-dark">
   <!--header part start-->
   <header class="container ">
-    <nav class="navbar navbar-expand-lg navbar-light bg-w d-flex">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark d-flex">
       <div class="container-fluid">
         <a class="navbar-brand text-primary fs-bold" href="#">BBC <span
             class="bg-primary text-light fs-bold">NEWS</span></a>
@@ -109,6 +109,18 @@
         </div>
       </div>
     </section>
+    <section class="container mt-5">
+      <div class="d-flex ">
+        <h5 class="text-light">Sort By View:</h5>
+        <select class="ms-3 text-secondary border-light"  required>
+          <option selected disabled value="">Default</option>
+        </select>
+      </div>
+    <div class="d-flex justify-content-end ">
+        <button class="btn btn-primary text-light ">Today's Pick</button>
+        <button class="btn border-primary ms-3 text-primary">Trending</button>
+    </div>
+    </section>
     <!--news image show-->
     <section class="container mt-5">
       <div id="show_news_here">
@@ -122,24 +134,13 @@
         </div>
       </div>
     </section>
-    <section class="container">
-      <div class="d-flex ">
-        <h5 class="text-light">Sort By View:</h5>
-        <select class="ms-3 text-secondary border-light"  required>
-          <option selected disabled value="">Default</option>
-        </select>
-      </div>
-    <div class="d-flex justify-content-end ">
-        <button class="btn btn-primary text-light ">Today's Pick</button>
-        <button class="btn border-primary ms-3 text-primary">Trending</button>
-    </div>
-    </section>
+    
 
   </main>
   <!--main part end-->
 
   <!--footer part start-->
-  <footer class="bg-light">
+  <footer >
     <p class="mt-5 text-center text-secondary fs-bold">Copyright 2021 BBC NEWS</p>
   </footer>
   <!--footer part end-->
