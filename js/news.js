@@ -51,7 +51,7 @@ const display_news = data => {
                 <h5 class="ms-3">${data.author.name}</h5>
                 <p class="ms-3">${data.author.published_date}</p>
                 <p class="ms-3">${data.total_view}</p>
-                <p class="ms-3">${data.rating.rating}</p>
+                <p class="ms-3">${data.rating.number}</p>
                 </div>
               </div>
             </div>
