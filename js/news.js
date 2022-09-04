@@ -37,7 +37,7 @@ const display_news = data => {
 
         news_area.classList.add('news_area')
         news_area.innerHTML = `
-        <div class="card mb-3" id="news-container" style="max-width: 540px;">
+        <div class="card mb-3" id="news-container" >
           <div class="row g-4">
             <div class="col-md-4">
               <img src="${data.thumbnail_url}" class="img-fluid rounded-start" alt="...">
@@ -47,7 +47,7 @@ const display_news = data => {
                 <h5 class="card-title">${data.title}</h5>
                 <p class="card-text deails">${data.details}</p>
                 <div class="d-flex">
-                <img src="${data.author.img}" class="img-fluid rounded-circle" style="width:20px;" alt="">
+                <img src="${data.author.img}" class="img-fluid rounded-circle" style="width:30px;" alt="">
                 <h5 class="ms-3 fs-6">${data.author.name}</h5>
                 <p class="ms-3 fs-6">${data.author.published_date}</p>
                 <p class="ms-3">${data.total_view}</p>
