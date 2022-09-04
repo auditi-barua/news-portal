@@ -1,109 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Newspark</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Newspark</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
+
 <body>
-    <header class="container bg-light">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex">
-            <div class="container-fluid">
-              <a class="navbar-brand text-primary fs-bold" href="#">BBC <span class="bg-primary text-light fs-bold">NEWS</span></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+  <!--header part start-->
+  <header class="container ">
+    <nav class="navbar navbar-expand-lg navbar-light bg-w d-flex">
+      <div class="container-fluid">
+        <a class="navbar-brand text-primary fs-bold" href="#">BBC <span
+            class="bg-primary text-light fs-bold">NEWS</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse nav justify-content-end" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item ">
+              <a class="nav-link active fs-italic text-decoration-underline text-primary" aria-current="page"
+                href="#">Home</a>
+            </li>
+            <li>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Blog
               </button>
-              <div class="collapse navbar-collapse nav justify-content-end" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                  <li class="nav-item ">
-                    <a class="nav-link active fs-italic text-decoration-underline text-primary" aria-current="page" href="#">Home</a>
-                  </li>
-                 <li>
-                <!-- Button trigger modal -->
-   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    Blog
-   </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <h3>What is the difference of var,let and const? </h3>
-          <p>Variables declared with var and const are scoped to the immediate function body.Variables declared with the let keyword are block-scoped, which means the variables will have scope to the immediate enclosing block.
-            
-            let is the improved version of var. let eliminates all the issues of var that we have talked about in the previous section. let has a similar syntax to var but has a more strict scope.
-            const declares a variable with a constant value.
-            Use the const keyword if the variable that you are declaring should not be allowed to be reassigned in the future.
-        </p>
-        <h3>What is the difference of regular and arrow function?</h3>
-        <p>Regular functions created using function declarations or expressions are constructible and callable. Since regular functions are constructible, they can be called using the new keyword. However, the arrow functions are only callable and not constructible, i.e arrow functions can never be used as constructor functions.</p>
-        <h2>Why do we use template string in javascrip? </h2>
-        <p>Template strings are a powerful feature of modern JavaScript released in ES6. It lets us insert/interpolate variables and expressions into strings without needing to concatenate like in older versions of JavaScript. It allows us to create strings that are complex and contain dynamic elements</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <h3>What is the difference of var,let and const? </h3>
+                      <p>Variables declared with var and const are scoped to the immediate function body.Variables
+                        declared with the let keyword are block-scoped, which means the variables will have scope to the
+                        immediate enclosing block.
+
+                        let is the improved version of var. let eliminates all the issues of var that we have talked
+                        about in the previous section. let has a similar syntax to var but has a more strict scope.
+                        const declares a variable with a constant value.
+                        Use the const keyword if the variable that you are declaring should not be allowed to be
+                        reassigned in the future.
+                      </p>
+                      <h3>What is the difference of regular and arrow function?</h3>
+                      <p>Regular functions created using function declarations or expressions are constructible and
+                        callable. Since regular functions are constructible, they can be called using the new keyword.
+                        However, the arrow functions are only callable and not constructible, i.e arrow functions can
+                        never be used as constructor functions.</p>
+                      <h2>Why do we use template string in javascrip? </h2>
+                      <p>Template strings are a powerful feature of modern JavaScript released in ES6. It lets us
+                        insert/interpolate variables and expressions into strings without needing to concatenate like in
+                        older versions of JavaScript. It allows us to create strings that are complex and contain
+                        dynamic elements</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <img src="img/logo.png" class="rounded-circle ms-3" alt="">
+          </ul>
         </div>
       </div>
+    </nav>
+  </header>
+
+
+  <!--header part end-->
+
+
+  <hr class="container mt-3">
+
+  <!--main part start-->
+  <main class="bg-dark">
+    <!--category -->
+    <section id="categories-container" class="mt-5 container">
+      <div class="cetegory_list">
+        <ul id="news_category">
+
+        </ul>
+      </div>
+    </section>
+    </section>
+    <!--search news item-->
+    <section class="container mt-5">
+      <div class="mb-3">
+
+        <div class="container">
+          <div class="news_found">
+            <p id="news_total_found">
+              No news item found
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--news image show-->
+    <section class="container mt-5">
+      <div id="show_news_here">
+        
+      </div>
+    </section>
+    <section id="loader" class="d-none">
+      <div id="spinner" class="spinner d-flex justify-content-center m-5">
+        <div class="spinner-border text-success" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </section>
+    <section class="container">
+      <div class="d-flex ">
+        <h5 class="text-light">Sort By View:</h5>
+        <select class="ms-3 text-secondary border-light"  required>
+          <option selected disabled value="">Default</option>
+        </select>
+      </div>
+    <div class="d-flex justify-content-end ">
+        <button class="btn btn-primary text-light ">Today's Pick</button>
+        <button class="btn border-primary ms-3 text-primary">Trending</button>
     </div>
-  </div>
-    </li>
-    <img src="img/logo.png" class="rounded-circle ms-3" alt="">
-  </ul>
- </div>
- </div>
-  </nav>
-    </header>
+    </section>
 
+  </main>
+  <!--main part end-->
 
-    <!--header part end-->
-    <hr class="container mt-3">
+  <!--footer part start-->
+  <footer class="bg-light">
+    <p class="mt-5 text-center text-secondary fs-bold">Copyright 2021 BBC NEWS</p>
+  </footer>
+  <!--footer part end-->
 
-    <!--main part start-->
-    <main class="bg-light ">
-        <!--category -->
-        <section  id="categories-container" class="mt-5 container">
-           <ul id="newscategory_item" class="list-unstyled li-sm li-lg d-flex gap-4 text-secondary ms-4 ">
-
-           </ul>
-           <!--spinning-->
-           <section id="loader" class="d-none">
-            <div style="height: 400px" class="d-flex justify-content-center align-items-center">
-                <div class="spinner-border text-success" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                  </div>
-            </div>
-        </section>
-        </section>
-        <section class="container mt-5">
-            <div class="mb-3">
-                
-                <input  type="email" class="form-control" id="search-field" id="exampleFormControlInput1" placeholder="search category">
-                <div id="no-found-message" class="mt-4 d-none">
-                    <h3 class="text-warning">No Phone Found.Please try a new search</h3>
-                  </div>
-              </div>
-        </section>
-        <section class="container mt-5">
-            <div id="news-container" class="card mb-3 gap-4" >
-              
-              </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-light">
-        <p class="mt-5 text-center text-secondary fs-bold">Copyright 2021 BBC NEWS</p>
-    </footer>
-   
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/news.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/news.js"></script>
 </body>
+
 </html>

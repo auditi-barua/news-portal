@@ -1,93 +1,76 @@
+
 const load_data = () => {
     fetch('https://openapi.programming-hero.com/api/news/categories')
-    .then(response => response.json())
-    .then(data => display_category(data.data.news_category))
-    .catch(error => console.log(error));
+        .then(response => response.json())
+        .then(data => display_categories(data.data.news_category))
+        .catch(error => console.log(error));
 }
-load_data()
-
-const display_category = category_data =>{
-     console.log(category_data);
-    const show_category = document.getElementById('newscategory_item');
-    category_data.forEach(category =>{
-        console.log(category.category_name);
-        const li_show_category= document.createElement('li');
-        li_show_category.classList.add('çategory_item');
-        li_show_category.innerHTML = `
-        <a onclick="display_category(${category.category_id})">${category.category_name}</a>
+const display_categories = category_data => {
+    // console.log(category_data);
+    const news_category = document.getElementById('news_category');
+    category_data.forEach(category => {
+        const news_category_item = document.createElement('li');
+        news_category_item.classList.add('category_item');
+        news_category_item.innerHTML = `
+        <a class="${category.category_id}" onclick="load_news_data('${category.category_id}')">${category.category_name}</a>
         `;
-        show_category.appendChild(li_show_category);
-    });
-   // toggleSpinner(false);
-}
-display_category();
-
-
-
-
-
-
-
-const loadData = () => {
-    fetch('https://openapi.programming-hero.com/api/news/category/01')
-    .then(res => res.json())
-    .then(data => displayDataDetails(data.data))
-}
-loadData();
-const displayDataDetails = data =>{
-    console.log(data);
-    const newsContainer = document.getElementById('news-container')
-    data.forEach(news => {
-       const newsDiv = document.createElement('div');
-       newsDiv.classList.add('col');
-        newsDiv.innerHTML = `
-        <div class="row>"
-        <div class="col-md-4 col-sm-4 ">
-        <img src="${data.img_url}" class="img-fluid rounded-start g-4" alt="...">
-      </div>
-      <div class="col-md-8 col-sm-8">
-        <div class="card-body">
-          <h5 class="card-title text-md-start text-sm-start">${'Biden Pledges Nearly $3 Billion To Ukraine In Largest U.S. Military Aid Package Yet'}</h5>
-          <p class="card-text">${data.details}</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-     </div>
-        `;
-        newsContainer.appendChild(newsDiv);
+        news_category.appendChild(news_category_item);
     })
 
 }
-displayDataDetails();
+const load_news_data = id => {
+    toggle_spinner(true);
+    fetch(`https://openapi.programming-hero.com/api/news/category/${id}`)
+        .then(res => res.json())
+        .then(data => display_news(data.data))
+        .catch(error => console.log(error));
+}
 
-/*
- const missingData = () => {
-    fetch('https://openapi.programming-hero.com/api/news/2e78e5e0310c2e9adbb6efb1a263e745')
-    .then(res => res.json())
-    .then(data => console.log(data))
-    .catch(error => console.log(data))
- }
+const display_news = data => {
+    founded_news(data)
+    
+    const show_news_here = document.querySelector('#show_news_here');
+    show_news_here.innerHTML = '';
+    data.forEach(data => {
+        console.log(data);
+        const news_area = document.createElement('div');
 
- missingData();
- const missingDataDetails = data => {
-    console.log(data);
-    const searchField = document.getElementById('search-field');
-    const searchText = searchField.value;
-    missingDataDetails(searchText);
+        news_area.classList.add('news_area')
+        news_area.innerHTML = `
+        <div class="card mb-3" id="news-container" style="max-width: 540px;">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <img src="${data.thumbnail_url}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">${data.title}</h5>
+                <p class="card-text deails">${data.details}</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        `;
+        show_news_here.appendChild(news_area);
+    })
+    toggle_spinner(false)
+}
 
-    const noData = document.getElementById('no-found-message');
-    if(data.length === 0){
-        noData.classList.remove('d-none');
-    }
-    else{
-        noData.classList.add('d-none');
-    }
+const toggle_spinner = is_loading => {
+    const load_section = document.querySelector('#loader');
+    if (is_loading) {
+        load_section.classList.remove('d-none');
+    } else {
+        load_section.classList.add('d-none');
+    };
+};
 
- }
-missingDataDetails();
+const founded_news = data =>{
+    const news_total_found = document.getElementById('news_total_found');
+    news_total_found.innerHTML = `
+    ${data.length} items found for category Entertainment
+    `;
+}
 
-*/
-
-
-
-
+load_data();
