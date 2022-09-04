@@ -48,8 +48,8 @@ const display_news = data => {
                 <p class="card-text deails">${data.details}</p>
                 <div class="d-flex">
                 <img src="${data.author.img}" class="img-fluid rounded-circle" style="width:20px;" alt="">
-                <h5 class="ms-3">${data.author.name}</h5>
-                <p class="ms-3">${data.author.published_date}</p>
+                <h5 class="ms-3 fs-6">${data.author.name}</h5>
+                <p class="ms-3 fs-6">${data.author.published_date}</p>
                 <p class="ms-3">${data.total_view}</p>
                 <p class="ms-3">${data.rating.number}</p>
                 </div>
